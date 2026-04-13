@@ -5,27 +5,13 @@
 
   <style>
     body {
-      margin: 0;
       font-family: Arial;
-      background: linear-gradient(to bottom, #ffe6f0, #fff);
       text-align: center;
-    }
-
-    .container {
-      padding: 40px 20px;
-    }
-
-    h1 {
-      color: #ff4d88;
-    }
-
-    p {
-      max-width: 600px;
-      margin: auto;
-      line-height: 1.6;
+      background: linear-gradient(to bottom, #ffe6f0, #fff);
     }
 
     button {
+      margin: 10px;
       padding: 10px 20px;
       background: #ff4d88;
       color: white;
@@ -33,73 +19,140 @@
       border-radius: 10px;
     }
 
-    .hidden {
-      display: none;
+    img {
+      width: 220px;
+      margin: 10px;
+      border-radius: 10px;
     }
 
-    .photo {
-      width: 250px;
-      margin: 10px;
-      border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    .hidden {
+      display: none;
     }
   </style>
 </head>
 
 <body>
 
-<div class="container" id="lock">
+<!-- 🔒 PASSWORD PAGE -->
+<div id="lock">
   <h2>This is only for you ❤️</h2>
-  <p>Open it on your birthday 🎂</p>
-
-  <input type="password" id="pass" placeholder="Enter password">
+  <p>Enter password 🎂</p>
+  <input type="password" id="pass">
   <br><br>
   <button onclick="unlock()">Enter</button>
 </div>
 
-<div class="container hidden" id="main">
-  <h1>Happy Birthday Vaibhav 🎉❤️</h1>
+<!-- 🎮 MENU -->
+<div id="menu" class="hidden">
+  <h2>Choose something… ❤️</h2>
 
+  <button onclick="showSection('letter')">💌 Choose 1</button>
+  <button onclick="showSection('photos')">🖼️ Choose 2</button>
+  <button onclick="showSection('love')">💖 Choose 3</button>
+  <button onclick="showSection('final')">🎁 Choose 4</button>
+</div>
+
+<!-- 💌 LETTER -->
+<div id="letter" class="hidden">
+  <h2>For You 💌</h2>
   <p>
   My lil one has turned 20 hehe ♥️😭<br><br>
-
   And ofc it's my second bday so I am excited more than you…<br><br>
-
   I know you don’t like me spending money, but even if you're far away, I can still make your day special…<br><br>
-
-  Don’t forget, apki riddhiii coder hai she can make a whole website for youuuuu 😌💻<br>
+  Don’t forget, apki riddhi coder haiiii she can make a whole websit for youuuuuuu 😌💻<br>
   I made this just for youuuuu ❤️<br><br>
-
   Happpyyy happpyyy happy birthdayyyy 🎂🎉<br>
   Krishna Bhagwan tumhe saari khushi de…<br>
   aur mujhe tum 😍🩷<br><br>
-
-  Enjoyyyyyy… and jab ham milengeeee, we’ll celebrate properly and ik u apko best gift lagega and u will be so emotional and happy seeing thissss 🥺✨<br><br>
-
+  Enjoyyyyyy ur dayyyy......jab wapas aaoge partyyy , we’ll celebrate properly  and ik yehh website dekhkar u will be the happiest and emotional as well and that the main purpose to make u the happiest mannnn because u deserve it🥺✨<br><br>
   I know thodi problems chal rahi hain…<br>
   but we’ll fix it… we always do ❤️<br><br>
-
   I loveeeee youuuuuu ❤️❤️❤️❤️
   </p>
+</div>
 
+<!-- 🖼️ PHOTOS -->
+<div id="photos" class="hidden">
   <h2>Our Memories 🥺❤️</h2>
 
-  <img src="pic1.jpg" class="photo">
-  <img src="pic2.jpg" class="photo">
-  <img src="pic3.jpg" class="photo">
+  <img src="pic1.jpg">
+  <img src="pic2.jpg">
+  <img src="pic3.jpg">
+  <img src="pic4.jpg">
+  <img src="pic5.jpg">
+  <img src="pic6.jpg">
+</div>
 
+<!-- 💖 REASONS -->
+<div id="love" class="hidden">
+  <h2>Reasons I Love You 💖</h2>
+
+  <button onclick="showMsg('r1')">Tap 🥺</button>
+  <p id="r1" class="hidden">I love how you care for me ❤️</p>
+
+  <button onclick="showMsg('r2')">Tap again 😏</button>
+  <p id="r2" class="hidden">I love how you make me feel safe 💖</p>
+
+  <button onclick="showMsg('r3')">One more 👀</button>
+  <p id="r3" class="hidden">I love how you handle everything patiently 🥺</p>
+
+  <button onclick="showMsg('r4')">Last 😭</button>
+  <p id="r4" class="hidden">I just love YOU… everything about you ❤️</p>
+</div>
+
+<!-- 🎁 FINAL -->
+<div id="final" class="hidden">
+  <h2>One last thing… ❤️</h2>
+  <button onclick="startTyping()">Click slowly 🥺</button>
+  <p id="finalText"></p>
 </div>
 
 <script>
 function unlock() {
-  var p = document.getElementById("pass").value;
-
+  let p = document.getElementById("pass").value;
   if(p === "vaibhavi11") {
-    document.getElementById("lock").classList.add("hidden");
-    document.getElementById("main").classList.remove("hidden");
+    document.getElementById("lock").style.display = "none";
+    document.getElementById("menu").style.display = "block";
   } else {
     alert("Wrong password 😝");
   }
+}
+
+function showSection(section) {
+  document.getElementById("letter").style.display = "none";
+  document.getElementById("photos").style.display = "none";
+  document.getElementById("love").style.display = "none";
+  document.getElementById("final").style.display = "none";
+
+  document.getElementById(section).style.display = "block";
+}
+
+function showMsg(id) {
+  document.getElementById(id).style.display = "block";
+}
+
+let text = `No matter what happens… no matter how tough things get…
+
+I’ll always choose you. Again and again. ❤️
+
+Happy Birthday my love… you mean everything to me 🥺✨`;
+
+let i = 0;
+
+function startTyping() {
+  i = 0;
+  let target = document.getElementById("finalText");
+  target.innerHTML = "";
+
+  function type() {
+    if (i < text.length) {
+      target.innerHTML += text.charAt(i);
+      i++;
+      setTimeout(type, 50);
+    }
+  }
+
+  type();
 }
 </script>
 
