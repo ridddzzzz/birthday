@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Happy Birthday Vaibhav ❤️</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial;
+      background: linear-gradient(to bottom, #ffe6f0, #fff);
+      text-align: center;
+    }
+
+    .container {
+      padding: 40px 20px;
+    }
+
+    h1 {
+      color: #ff4d88;
+    }
+
+    p {
+      max-width: 600px;
+      margin: auto;
+      line-height: 1.6;
+    }
+
+    button {
+      padding: 10px 20px;
+      background: #ff4d88;
+      color: white;
+      border: none;
+      border-radius: 10px;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .photo {
+      width: 250px;
+      margin: 10px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container" id="lock">
+  <h2>This is only for you ❤️</h2>
+  <p>Open it on your birthday 🎂</p>
+
+  <input type="password" id="pass" placeholder="Enter password">
+  <br><br>
+  <button onclick="unlock()">Enter</button>
+</div>
+
+<div class="container hidden" id="main">
+  <h1>Happy Birthday Vaibhav 🎉❤️</h1>
+
+  <p>
+  My lil one has turned 20 hehe ♥️😭<br><br>
+
+  And ofc it's my second bday so I am excited more than you…<br><br>
+
+  I know you don’t like me spending money, but even if you're far away, I can still make your day special…<br><br>
+
+  Don’t forget, apki riddhiii coder hai she can make a whole website for youuuuu 😌💻<br>
+  I made this just for youuuuu ❤️<br><br>
+
+  Happpyyy happpyyy happy birthdayyyy 🎂🎉<br>
+  Krishna Bhagwan tumhe saari khushi de…<br>
+  aur mujhe tum 😍🩷<br><br>
+
+  Enjoyyyyyy… and jab ham milengeeee, we’ll celebrate properly and ik u apko best gift lagega and u will be so emotional and happy seeing thissss 🥺✨<br><br>
+
+  I know thodi problems chal rahi hain…<br>
+  but we’ll fix it… we always do ❤️<br><br>
+
+  I loveeeee youuuuuu ❤️❤️❤️❤️
+  </p>
+
+  <h2>Our Memories 🥺❤️</h2>
+
+  <img src="pic1.jpg" class="photo">
+  <img src="pic2.jpg" class="photo">
+  <img src="pic3.jpg" class="photo">
+
+</div>
+
+<script>
+function unlock() {
+  var p = document.getElementById("pass").value;
+
+  if(p === "vaibhavi11") {
+    document.getElementById("lock").classList.add("hidden");
+    document.getElementById("main").classList.remove("hidden");
+  } else {
+    alert("Wrong password 😝");
+  }
+}
+</script>
+
+</body>
+</html>
